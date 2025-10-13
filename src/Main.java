@@ -89,14 +89,46 @@ public class Main {
                     System.out.println("Texto en Morse:");
                     System.out.println(morse);
                     break;
+                case 9:
+                    String word = RandomWords.GenWords();
+                    int intentos = 5;
+
+                    System.out.println("¡Bienvenido a Wordle UwU!");
+                    System.out.println("Adivina la palabra de 5 letras :D. \nTienes " + intentos + " intentos >:)");
+
+                    while (intentos > 0) {
+                        System.out.print("\nIntento #" + (6 - intentos) + ": ");
+                        String intento = sc.nextLine().toUpperCase();
+
+                        if (intento.length() != 5) {
+                            System.out.println("La palabra debe tener exactamente 5 letras -_-");
+                            continue;
+                        }
+
+                        String pista = Wordle.Hint(word, intento);
+                        System.out.println("Como vas: " + pista);
+
+                        if (intento.equals(word)) {
+                            System.out.println("¡Felicidades! Adivinaste la palabra :D \nSi tuvieras un papá estaría orgulloso :')");
+                            break;
+                        }
+
+                        intentos--;
+                    }
+
+                    if (intentos == 0) {
+                        System.out.println("\nLo siento papu, se acabaron los intentos :'c");
+                        System.out.println("La palabra era: " + word);
+                    }
+                    break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
                     break;
                 default:
-                    System.out.println("Opción no válida, intenta de nuevo.");
+                    System.out.println("Opción inválida, intentalo de nuevo dumbass.");
             }
             if (op != 10) {
-                System.out.println("\nPresiona Enter para continuar...");
+                System.out.println("\nPresione Enter para continuar...");
                 sc.nextLine();
             }
         } while (op != 10);
