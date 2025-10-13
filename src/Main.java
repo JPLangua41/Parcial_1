@@ -26,13 +26,13 @@ public class Main {
                 case 1:
                     System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento OwO: ");
                     dia = sc.nextInt();
-                    System.out.print("Por favor ingresa tu mes de nacimiento bb: ");
+                    System.out.print("Por favor ingresa tu mes de nacimiento ^^: ");
                     mes = sc.nextInt();
                     String signo = Zodiaco.GiveSign(dia, mes);
                     System.out.println("\nTu signo del zodiaco es: " + signo);
                     break;
                 case 2:
-                    System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento OwO: ");
+                    System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento EwE: ");
                     dia = sc.nextInt();
                     System.out.print("Por favor ingresa tu mes de nacimiento bb: ");
                     mes = sc.nextInt();
@@ -41,11 +41,14 @@ public class Main {
                     sc.nextLine();
 
                     int edad = Edad.calcedad(dia, mes, anho);
-                    System.out.println("OMG papu, tienes " + edad + " años :0.");
-                    if (edad < 18)
-                        System.out.println("JAJAJAJA, eres re menor");
-                    else
-                        System.out.println("Hola abuelito, ¿cómo van las rodillas?");
+                    if (edad == -1) System.out.println("WTF papu, no existes :'c");
+                    else {
+                        System.out.println("OMG papu, tienes " + edad + " años :0.");
+                        if (edad >= 0 && edad < 18)
+                            System.out.println("JAJAJAJA, eres re menor");
+                        else
+                            System.out.println("Hola abuelito, ¿cómo van las rodillas?");
+                    }
                     break;
                 case 3:
                     System.out.println("Ingresa un número para verificar si es perfecto :p ");
@@ -65,6 +68,12 @@ public class Main {
                     } else {
                         System.out.println("No, fuck you, tu palabra o frase no es palindroma >:(.");
                     }
+                    break;
+                case 5:
+                    System.out.println("Por favor ingrese un número para verificar si es capicua o no ^^");
+                    int cap = sc.nextInt();
+                    if (Capicua.EsCapicua(cap)) System.out.println(cap + " si es un número capicua :D");
+                    else System.out.println(cap + " no es un número capicua :'(");
                     break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
