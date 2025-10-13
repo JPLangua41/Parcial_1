@@ -1,3 +1,5 @@
+package Caballero;
+
 public class Armadura {
 
     String name;

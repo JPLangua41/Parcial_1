@@ -1,3 +1,5 @@
+package Capicua;
+
 public class Capicua {
     public static boolean EsCapicua(int num)
     {

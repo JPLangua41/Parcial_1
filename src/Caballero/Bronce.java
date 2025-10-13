@@ -1,4 +1,6 @@
-public class Bronce extends Armadura{
+package Caballero;
+
+public class Bronce extends Armadura {
 
     int durability;
     String animal;
@@ -10,7 +12,7 @@ public class Bronce extends Armadura{
     }
 
     public Bronce(){
-        super.material=Tipo.BRONCE;
+        super.material= Tipo.BRONCE;
         super.weapons=false;
     }
 

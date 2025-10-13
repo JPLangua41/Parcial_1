@@ -1,3 +1,5 @@
+package Caballero;
+
 public enum Dios {
     ATENA,
     HADES,

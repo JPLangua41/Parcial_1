@@ -1,3 +1,5 @@
+package Caballero;
+
 public class Caballero {
     String nombre;
     Constellation constellation;
