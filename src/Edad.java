@@ -27,10 +27,13 @@ public class Edad {
             Valid = false;
         }
 
+        if (anho == anioActual && (mes > mesActual || (mes == mesActual && dia > diaActual))) {
+            Valid = false;
+        }
         if (!Valid) {
             return -1; 
         }
-        
+
         if ((mes > mesActual) || (mes == mesActual && dia > diaActual)) {
             edad--;
         }

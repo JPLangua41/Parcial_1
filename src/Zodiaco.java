@@ -1,5 +1,4 @@
 public class Zodiaco {
-
     public static String GiveSign(int dia, int mes) {
         if (mes == 1) {
             if (dia >= 1 && dia <= 20) return "Capricornio";

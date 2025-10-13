@@ -20,27 +20,25 @@ public class Main {
             op = sc.nextShort();
             sc.nextLine();
 
-            int dia;
-            int mes;
             switch (op) {
                 case 1:
-                    System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento OwO: ");
-                    dia = sc.nextInt();
+                    System.out.print("Por favor ingresa tu día de nacimiento OwO: ");
+                    int dia = sc.nextInt();
                     System.out.print("Por favor ingresa tu mes de nacimiento ^^: ");
-                    mes = sc.nextInt();
+                    int mes = sc.nextInt();
                     String signo = Zodiaco.GiveSign(dia, mes);
                     System.out.println("\nTu signo del zodiaco es: " + signo);
                     break;
                 case 2:
-                    System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento EwE: ");
-                    dia = sc.nextInt();
+                    System.out.print("Por favor ingresa tu día de nacimiento EwE: ");
+                    int dia1 = sc.nextInt();
                     System.out.print("Por favor ingresa tu mes de nacimiento bb: ");
-                    mes = sc.nextInt();
-                    System.out.print("Por favor ingresea tu año de nacimiento UwU: ");
+                    int mes1 = sc.nextInt();
+                    System.out.print("Por favor ingresa tu año de nacimiento UwU: ");
                     int anho = sc.nextInt();
                     sc.nextLine();
 
-                    int edad = Edad.calcedad(dia, mes, anho);
+                    int edad = Edad.calcedad(dia1, mes1, anho);
                     if (edad == -1) System.out.println("WTF papu, no existes :'c");
                     else {
                         System.out.println("OMG papu, tienes " + edad + " años :0.");
@@ -51,7 +49,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("Ingresa un número para verificar si es perfecto :p ");
+                    System.out.println("Por favor ingrese un número para verificar si es perfecto :p ");
                     int num = sc.nextInt();
                     sc.nextLine();
                     if (Perfectnum.pernum(num)) {
@@ -61,7 +59,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.println("Ingresa una palabra o frase para validar si es palíndromo :v ");
+                    System.out.println("Por favor ingrese una palabra o frase para validar si es palíndromo :v ");
                     String frase = sc.nextLine();
                     if (Palindromo.Palindrom(frase)) {
                         System.out.println("Waos, tu palabra o frase si es palindroma :O");
@@ -70,15 +68,30 @@ public class Main {
                     }
                     break;
                 case 5:
-                    System.out.println("Por favor ingrese un número para verificar si es capicua o no ^^");
+                    System.out.println("Por favor ingrese un número para verificar si es capicua o no ^-^");
                     int cap = sc.nextInt();
                     if (Capicua.EsCapicua(cap)) System.out.println(cap + " si es un número capicua :D");
                     else System.out.println(cap + " no es un número capicua :'(");
                     break;
+                case 6:
+                    System.out.println("Por favor ingrese el código Morse a traducir (usa / para separar palabras) -_- ");
+                    String morseInput = sc.nextLine();
+                    MorseTXT maTXT = new MorseTXT();
+                    String msj = maTXT.MorseaTXT(morseInput);
+                    System.out.println("Texto traducido:");
+                    System.out.println(msj);
+                    break;
+                case 7:
+                    System.out.println("Por favor ingrese el texto que deseas convertir a Morse :D ");
+                    String txt = sc.nextLine();
+                    TXTMorse trans = new TXTMorse();
+                    String morse = trans.TXTaMorse(txt);
+                    System.out.println("Texto en Morse:");
+                    System.out.println(morse);
+                    break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
                     break;
-
                 default:
                     System.out.println("Opción no válida, intenta de nuevo.");
             }
