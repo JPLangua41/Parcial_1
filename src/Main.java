@@ -16,7 +16,7 @@ public class Main {
             System.out.println("8. Gestor de caballeros del Zodiaco");
             System.out.println("9. Wordle");
             System.out.println("10. Salir :'c");
-            System.out.println("Opción: ");
+            System.out.print("Opción: ");
             op = sc.nextShort();
             sc.nextLine();
 
@@ -46,6 +46,16 @@ public class Main {
                         System.out.println("JAJAJAJA, eres re menor");
                     else
                         System.out.println("Hola abuelito, ¿cómo van las rodillas?");
+                    break;
+                case 3:
+                    System.out.println("Ingresa un número para verificar si es perfecto :p ");
+                    int num = sc.nextInt();
+                    sc.nextLine();
+                    if (Perfectnum.pernum(num)) {
+                        System.out.println("¡OMG! \n " + num + " es un número perfecto.");
+                    } else {
+                        System.out.println("Nopuedeser D: \n " + num + " no es un número perfecto.");
+                    }
                     break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
