@@ -57,6 +57,15 @@ public class Main {
                         System.out.println("Nopuedeser D: \n " + num + " no es un número perfecto.");
                     }
                     break;
+                case 4:
+                    System.out.println("Ingresa una palabra o frase para validar si es palíndromo :v ");
+                    String frase = sc.nextLine();
+                    if (Palindromo.Palindrom(frase)) {
+                        System.out.println("Waos, tu palabra o frase si es palindroma :O");
+                    } else {
+                        System.out.println("No, fuck you, tu palabra o frase no es palindroma >:(.");
+                    }
+                    break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
                     break;
