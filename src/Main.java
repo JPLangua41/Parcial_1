@@ -1,7 +1,6 @@
-import java.io.IOException;
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         short op;
         do {
@@ -21,18 +20,32 @@ public class Main {
             op = sc.nextShort();
             sc.nextLine();
 
-            int dia = 0;
-            int mes = 0;
+            int dia;
+            int mes;
             switch (op) {
                 case 1:
                     System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento OwO: ");
                     dia = sc.nextInt();
                     System.out.print("Por favor ingresa tu mes de nacimiento bb: ");
                     mes = sc.nextInt();
-                    System.out.print("Por favor ingresea tu año de nacimiento UwU: ");
-                    int anio = sc.nextInt();
                     String signo = Zodiaco.GiveSign(dia, mes);
                     System.out.println("\nTu signo del zodiaco es: " + signo);
+                    break;
+                case 2:
+                    System.out.print("HOLI UWU. \nPor favor ingresa tu día de nacimiento OwO: ");
+                    dia = sc.nextInt();
+                    System.out.print("Por favor ingresa tu mes de nacimiento bb: ");
+                    mes = sc.nextInt();
+                    System.out.print("Por favor ingresea tu año de nacimiento UwU: ");
+                    int anho = sc.nextInt();
+                    sc.nextLine();
+
+                    int edad = Edad.calcedad(dia, mes, anho);
+                    System.out.println("OMG papu, tienes " + edad + " años :0.");
+                    if (edad < 18)
+                        System.out.println("JAJAJAJA, eres re menor");
+                    else
+                        System.out.println("Hola abuelito, ¿cómo van las rodillas?");
                     break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
@@ -43,7 +56,7 @@ public class Main {
             }
             if (op != 10) {
                 System.out.println("\nPresiona Enter para continuar...");
-                System.in.read();
+                sc.nextLine();
             }
         } while (op != 10);
     }
