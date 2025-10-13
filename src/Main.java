@@ -121,6 +121,28 @@ public class Main {
                         System.out.println("La palabra era: " + word);
                     }
                     break;
+                case 8:
+                    System.out.println("Bienvenido a Saint Seiya Xenoverse B)");
+                    Caballero c1 = new Caballero();
+                    c1.nombre = "Seiya";
+                    c1.cosmos = 100;
+                    c1.dios = Dios.ATENA;
+                    Bronce b1 = new Bronce();
+                    b1.name = "Pegaso";
+                    b1.animal = "Pegaso";
+                    b1.status = true;
+                    b1.material=Tipo.BRONCE;
+                    b1.durability=100;
+                    c1.armadura = b1;
+
+                    System.out.println(b1);
+
+                    Oro o1 = new Oro();
+                    o1.name = "Scropio";
+                    System.out.println(o1);
+
+                    System.out.println(c1);
+                    break;
                 case 10:
                     System.out.println("Gracias por usar mi menú :3");
                     break;
