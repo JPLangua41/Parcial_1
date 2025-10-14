@@ -1,3 +1,7 @@
+import Caballero.Caballero;
+import Caballero.Constellation;
+import Caballero.Dios;
+import java.util.ArrayList;
 import Capicua.Capicua;
 import Edad.Edad;
 import Morse.MorseTXT;
@@ -97,6 +101,77 @@ public class Main {
                     System.out.println(morse);
                     break;
                 case 8:
+                    ArrayList<Caballero> caballeros = new ArrayList<>();
+                    int opi;
+
+                    do {
+                        System.out.println("Bienvenido a Saint Seiya Xenoverse >:D");
+                        System.out.println("Escoja una opción: ");
+                        System.out.print("1. Crear Caballero \n2. Ver info del caballero \n3. Batalla de caballeros \n4. Salir :'(\n> ");
+                        opi = sc.nextInt();
+                        sc.nextLine();
+
+                        switch (opi) {
+                            case 1:
+                                System.out.print("Ingresa tu nombre: ");
+                                String nombre = sc.nextLine();
+
+                                System.out.println("Selecciona tu signo del zodiaco:");
+                                for (Constellation s : Constellation.values()) {
+                                    System.out.println("- " + s);
+                                }
+
+                                System.out.print("Escribe tu signo exactamente como aparece: ");
+                                String signoInput = sc.nextLine().toUpperCase();
+
+                                System.out.println("Selecciona tu Dios protector:");
+                                for (Dios d : Dios.values()) {
+                                    System.out.println("- " + d);
+                                }
+
+                                System.out.print("Escribe el nombre del Dios exactamente como aparece: ");
+                                String diosInput = sc.nextLine().toUpperCase();
+
+                                try {
+                                    Constellation sign = Constellation.valueOf(signoInput);
+                                    Dios dios = Dios.valueOf(diosInput);
+                                    Caballero nuevo = new Caballero(nombre, sign, dios);
+                                    caballeros.add(nuevo);
+                                    System.out.println("¡Caballero creado exitosamente!");
+                                    nuevo.mostrarDatos();
+                                } catch (IllegalArgumentException e) {
+                                    System.out.println("Signo o Dios inválido. Intenta nuevamente.");
+                                }
+                                break;
+
+                            case 2:
+                                if (caballeros.isEmpty()) {
+                                    System.out.println("No has creado ningún caballero aún.");
+                                } else {
+                                    System.out.println("Caballeros registrados:");
+                                    for (int i = 0; i < caballeros.size(); i++) {
+                                        System.out.println("\nCaballero #" + (i + 1));
+                                        caballeros.get(i).mostrarDatos();
+                                    }
+                                }break;
+
+                            case 3:
+                                System.out.println("Función de batalla aún no implementada.");
+                                break;
+
+                            case 4:
+                                System.out.println("Gracias por jugar Saint Seiya Xenoverse B)");
+                                break;
+
+                            default:
+                                System.out.println("Opción inválida, intentalo de nuevo dumbass.");
+                        }
+
+                        if (opi != 4) {
+                            System.out.println("\nPresione Enter para continuar...");
+                            sc.nextLine();
+                        }
+                    } while (opi != 4);
                     break;
                 case 9:
                     String word = RandomWords.GenWords();

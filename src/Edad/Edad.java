@@ -38,8 +38,6 @@ public class Edad {
 
         if ((mes > mesActual) || (mes == mesActual && dia > diaActual)) {
             edad--;
-        }
-
-        return edad;
+        }return edad;
     }
 }

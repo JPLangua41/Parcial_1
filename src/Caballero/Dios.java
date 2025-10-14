@@ -1,9 +1,18 @@
 package Caballero;
 
 public enum Dios {
-    ATENA,
-    HADES,
+    ZEUS,
+    HERA,
     POSEIDON,
-    ODIN,
-    ORIGEN_MISTERIOSO
+    ATENEA,
+    APOLO,
+    ARTEMISA,
+    ARES,
+    AFRODITA,
+    HEFESTO,
+    HERMES,
+    DIONISIO,
+    DEMETER,
+    HERCULES,
+    HADES
 }

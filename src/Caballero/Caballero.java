@@ -3,27 +3,19 @@ package Caballero;
 public class Caballero {
     String nombre;
     Constellation constellation;
-    int cosmos;
     Dios dios;
     Armadura armadura;
 
-
-    public Caballero(String nombre, Constellation constellation) {
+    public Caballero(String nombre, Constellation signo, Dios dios) {
         this.nombre = nombre;
-        this.constellation = constellation;
+        this.constellation = signo;
+        this.dios =dios;
+        this.armadura = new Armadura();
     }
 
-    //Constructor por defecto
-    public Caballero() {
-    }
-
-    //Sobrecarga de metodos
-    public void burnCosmos(){
-        System.out.println(this.constellation +" esta usando "+(this.cosmos*2)+" cosmos");
-        this.cosmos=this.cosmos-10;
-    }
-    public void burnCosmos(int c)
-    {
-        this.cosmos=this.cosmos*c;
+    public void mostrarDatos() {
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Signo del Zodiaco: " + constellation);
+        System.out.println("Dios protector: " + dios);
     }
 }
