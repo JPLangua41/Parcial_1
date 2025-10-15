@@ -1,5 +1,3 @@
-package Caballero;
-
 public enum Constellation {
     CAPRICORNIO,
     ACUARIO,

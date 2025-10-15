@@ -1,5 +1,3 @@
-package Caballero;
-
 public enum Weapons {
     ESPADAS_DOBLES,
     ESCUDO,

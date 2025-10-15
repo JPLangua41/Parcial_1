@@ -1,5 +1,3 @@
-package Morse;
-
 public class MorseTXT extends VocabMorse {
     public String MorseaTXT(String text) {
         StringBuilder rest = new StringBuilder();

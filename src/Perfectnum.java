@@ -1,5 +1,3 @@
-package Perfectnum;
-
 public class Perfectnum {
     public static boolean pernum(int num) {
         if (num <= 0) return false;

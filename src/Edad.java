@@ -1,5 +1,3 @@
-package Edad;
-
 public class Edad {
     public static int calcedad(int dia, int mes, int anho) {
         int anioActual = 2025;

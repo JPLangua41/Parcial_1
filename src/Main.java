@@ -1,14 +1,5 @@
-import Caballero.Caballero;
-import Caballero.Constellation;
-import Caballero.Dios;
 import java.util.ArrayList;
-import Capicua.Capicua;
-import Edad.Edad;
-import Morse.MorseTXT;
-import Morse.TXTMorse;
-import Palindromo.Palindromo;
-import Perfectnum.Perfectnum;
-
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
@@ -113,15 +104,15 @@ public class Main {
 
                         switch (opi) {
                             case 1:
-                                System.out.print("Ingresa tu nombre: ");
+                                System.out.print("Ingresa el nombre del caballero: ");
                                 String nombre = sc.nextLine();
 
-                                System.out.println("Selecciona tu signo del zodiaco:");
+                                System.out.println("Selecciona el signo del zodiaco:");
                                 for (Constellation s : Constellation.values()) {
                                     System.out.println("- " + s);
                                 }
 
-                                System.out.print("Escribe tu signo exactamente como aparece: ");
+                                System.out.print("Escribe el signo exactamente como aparece: ");
                                 String signoInput = sc.nextLine().toUpperCase();
 
                                 System.out.println("Selecciona tu Dios protector:");
@@ -131,16 +122,39 @@ public class Main {
 
                                 System.out.print("Escribe el nombre del Dios exactamente como aparece: ");
                                 String diosInput = sc.nextLine().toUpperCase();
+                                System.out.println("Vamos a crear la armadura de tu caballero. :p");
+                                System.out.print("Nombre de la armadura: ");
+                                String namedura = sc.nextLine();
+
+                                System.out.println("Selecciona el arma:");
+                                for (Weapons w : Weapons.values()) {
+                                    System.out.println("- " + w);
+                                }
+                                System.out.print("Escribe el arma exactamente como aparece: ");
+                                String armaInput = sc.nextLine().toUpperCase();
+
+                                System.out.println("Selecciona el material:");
+                                for (Tipo t : Tipo.values()) {
+                                    System.out.println("- " + t);
+                                }
+                                System.out.print("Escribe el material exactamente como aparece: ");
+                                String materialInput = sc.nextLine().toUpperCase();
+
 
                                 try {
                                     Constellation sign = Constellation.valueOf(signoInput);
                                     Dios dios = Dios.valueOf(diosInput);
-                                    Caballero nuevo = new Caballero(nombre, sign, dios);
+                                    Weapons arma = Weapons.valueOf(armaInput);
+                                    Tipo material = Tipo.valueOf(materialInput);
+
+                                    Armadura armadura = new Armadura(namedura, arma, material);
+                                    Caballero nuevo = new Caballero(nombre, sign, dios, armadura);
                                     caballeros.add(nuevo);
+
                                     System.out.println("¡Caballero creado exitosamente!");
                                     nuevo.mostrarDatos();
                                 } catch (IllegalArgumentException e) {
-                                    System.out.println("Signo o Dios inválido. Intenta nuevamente.");
+                                    System.out.println("Alguno de los valores ingresados no es válido. Intenta nuevamente.");
                                 }
                                 break;
 
@@ -153,7 +167,28 @@ public class Main {
                                         System.out.println("\nCaballero #" + (i + 1));
                                         caballeros.get(i).mostrarDatos();
                                     }
-                                }break;
+
+                                    System.out.print("\n¿Deseas eliminar algún caballero? (s/n): ");
+                                    String response = sc.nextLine().toLowerCase();
+
+                                    if (response.equals("s")) {
+                                        System.out.print("Ingresa el número del caballero a eliminar (1 a " + caballeros.size() + "): ");
+                                        try {
+                                            int indice = sc.nextInt();
+                                            sc.nextLine();
+
+                                            if (indice >= 1 && indice <= caballeros.size()) {
+                                                Caballero eliminado = caballeros.remove(indice - 1);
+                                                System.out.println("Caballero '" + eliminado.getNombre() + "' eliminado correctamente.");
+                                            } else {
+                                                System.out.println("Número fuera de rango.");
+                                            }
+                                        } catch (InputMismatchException e) {
+                                            System.out.println("Entrada inválida. Debes ingresar un número.");
+                                            sc.nextLine();
+                                        }
+                                    }
+                                } break;
 
                             case 3:
                                 System.out.println("Función de batalla aún no implementada.");
@@ -174,7 +209,7 @@ public class Main {
                     } while (opi != 4);
                     break;
                 case 9:
-                    String word = RandomWords.GenWords();
+                    String word = Wordle.RandomWords.GenWords();
                     int intentos = 5;
 
                     System.out.println("¡Bienvenido a Wordle UwU!");

@@ -1,5 +1,3 @@
-package Caballero;
-
 public enum Dios {
     ZEUS,
     HERA,

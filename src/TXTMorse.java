@@ -1,5 +1,3 @@
-package Morse;
-
 public class TXTMorse extends VocabMorse {
     public String TXTaMorse(String txt) {
         StringBuilder res = new StringBuilder();
