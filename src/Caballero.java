@@ -21,4 +21,18 @@ public class Caballero {
         System.out.println("Dios protector: " + dios);
         if (armadura != null) armadura.mostrarDatos();
         }
+    private int vida = 20;
+
+    public int getVida() { return vida; }
+    public void setVida(int vida) { this.vida = vida; }
+
+    public int calcularAtaque() {
+        int base = constellation.getAtaque() + armadura.getArma().getDanho();
+        int critico = Math.random() < 0.2 ? 2 : 1; // 20% de probabilidad de crítico
+        return base * critico;
+    }
+
+    public int calcularDefensa() {
+        return constellation.getDefensa() + dios.getDefensaExtra();
+    }
 }

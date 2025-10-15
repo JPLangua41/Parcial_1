@@ -191,7 +191,33 @@ public class Main {
                                 } break;
 
                             case 3:
-                                System.out.println("Función de batalla aún no implementada.");
+
+                                if (caballeros.size() < 2) {
+                                    System.out.println("Necesitas al menos dos caballeros para iniciar una batalla.");
+                                    break;
+                                }
+
+                                System.out.println("Selecciona el caballero 1:");
+                                for (int i = 0; i < caballeros.size(); i++) {
+                                    System.out.println((i + 1) + ". " + caballeros.get(i).getNombre());
+                                }
+                                int idx1 = sc.nextInt() - 1;
+                                sc.nextLine();
+
+                                System.out.println("Selecciona el caballero 2:");
+                                for (int i = 0; i < caballeros.size(); i++) {
+                                    if (i != idx1) {
+                                        System.out.println((i + 1) + ". " + caballeros.get(i).getNombre());
+                                    }
+                                }
+                                int idx2 = sc.nextInt() - 1;
+                                sc.nextLine();
+
+                                Caballero c1 = caballeros.get(idx1);
+                                Caballero c2 = caballeros.get(idx2);
+
+                                Batalla batalla = new Batalla(c1, c2, sc);
+                                batalla.iniciar();
                                 break;
 
                             case 4:

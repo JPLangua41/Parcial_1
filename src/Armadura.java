@@ -13,4 +13,9 @@ public class Armadura {
         System.out.println(" - Arma: " + armas);
         System.out.println(" - Material: " + material);
     }
+
+    public Weapons getArma() {
+        return armas;
+    }
+
 }
